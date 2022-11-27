@@ -4,7 +4,7 @@ info:
   contact: {}
   version: '1.0'
 servers:
-- url: https://jobs-apig.herokuapp.com/api/v1
+- url: https://jobs-apilive.herokuapp.com/api/v1
   variables: {}
 paths:
   /jobs:
@@ -22,7 +22,7 @@ paths:
       security:
       - bearer: []
       servers:
-      - url: https://jobs-apig.herokuapp.com/api/v1
+      - url: https://jobs-apilive.herokuapp.com/api/v1
         variables: {}
     post:
       tags:
@@ -54,7 +54,7 @@ paths:
       security:
       - bearer: []
       servers:
-      - url: https://jobs-apig.herokuapp.com/api/v1
+      - url: https://jobs-apilive.herokuapp.com/api/v1
         variables: {}
   /jobs/{id}:
     parameters:
@@ -78,7 +78,7 @@ paths:
       security:
       - bearer: []
       servers:
-      - url: https://jobs-apig.herokuapp.com/api/v1
+      - url: https://jobs-apilive.herokuapp.com/api/v1
         variables: {}
     patch:
       tags:
@@ -94,7 +94,7 @@ paths:
       security:
       - bearer: []
       servers:
-      - url: https://jobs-apig.herokuapp.com/api/v1
+      - url: https://jobs-apilive.herokuapp.com/api/v1
         variables: {}
     delete:
       tags:
@@ -110,7 +110,7 @@ paths:
       security:
       - bearer: []
       servers:
-      - url: https://jobs-apig.herokuapp.com/api/v1
+      - url: https://jobs-apilive.herokuapp.com/api/v1
         variables: {}
   /auth/login:
     post:
@@ -139,7 +139,7 @@ paths:
           headers: {}
       deprecated: false
       servers:
-      - url: https://jobs-apig.herokuapp.com/api/v1
+      - url: https://jobs-apilive.herokuapp.com/api/v1
         variables: {}
   /auth/register:
     post:
@@ -170,7 +170,7 @@ paths:
           headers: {}
       deprecated: false
       servers:
-      - url: https://jobs-apig.herokuapp.com/api/v1
+      - url: https://jobs-apilive.herokuapp.com/api/v1
         variables: {}
 components:
   schemas:
