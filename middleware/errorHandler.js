@@ -14,7 +14,7 @@ const errorHandler = (err, req, res, next)=>{
     if (err.name === "ValidationError"){
         customError.msg = Object.values(err.errors)
          .map((items)=> { return items.message})
-         .join(" & "),
+         .join(" and "),
         customError.statusCode = 400
     }
 

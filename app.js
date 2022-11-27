@@ -13,6 +13,9 @@ const jobs = require("./routes/jobs")
 const notFound = require("./middleware/notFound")
 const errorHandler = require("./middleware/errorHandler")
 
+const swaggerUI = require("swagger-ui-express")
+const YAML = require("yamljs")
+const swaggerDoc = YAML.load("./swagger.yaml")
 
 app.set("trust proxy", 1)
 app.use(rateLimiter({
@@ -25,13 +28,15 @@ app.use(cors())
 app.use(xss())
 app.use(helmet())
 
+
+
 const auth = require("./middleware/authMiddleware")
 
 app.get("/",(req,res)=>{
-    res.send("Welcome to the test API")
+    res.send("Welcome to the test API <a href='/api-docs'>Documentation</a>")
 })
 
-
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 
 app.use("/api/v1/auth", authenticate)
 app.use("/api/v1/jobs",auth,  jobs)
